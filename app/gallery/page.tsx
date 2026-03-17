@@ -88,11 +88,10 @@ const galleryItems = [
     description: "Tender moments captured in a beautifully decorated space.",
     color: "from-sky-200 to-blue-300",
   },
-  {
-    id: 11,
-    category: "Government Event",
-    title: "Annual Awards ",
-    description: "Government Events ."
+ id: 11,
+    category: "weddings",
+    title: "Beach Wedding",
+    description: "Romantic seaside ceremony with sunset views.",
     color: "from-cyan-200 to-blue-300",
   },
   {
