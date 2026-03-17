@@ -88,7 +88,8 @@ const galleryItems = [
     description: "Tender moments captured in a beautifully decorated space.",
     color: "from-sky-200 to-blue-300",
   },
- id: 11,
+  {
+    id: 11,
     category: "weddings",
     title: "Beach Wedding",
     description: "Romantic seaside ceremony with sunset views.",
@@ -107,14 +108,14 @@ export default function GalleryPage() {
   const [activeCategory, setActiveCategory] = useState("all")
   const [selectedItem, setSelectedItem] = useState<typeof galleryItems[0] | null>(null)
 
-  const filteredItems = activeCategory === "all"
-    ? galleryItems
+  const filteredItems = activeCategory === "all" 
+    ? galleryItems 
     : galleryItems.filter(item => item.category === activeCategory)
 
   return (
     <div className="flex min-h-screen flex-col">
       <Navigation />
-
+      
       <main className="flex-1">
         {/* Hero Section */}
         <section className="bg-gradient-to-br from-primary/20 via-background to-accent/10 py-16 lg:py-24">
@@ -127,7 +128,7 @@ export default function GalleryPage() {
                 Moments We've Created
               </h1>
               <p className="text-lg text-muted-foreground">
-                Take a look at some of the beautiful events we've had the privilege to plan and execute.
+                Take a look at some of the beautiful events we've had the privilege to plan and execute. 
                 Each celebration tells a unique story of joy, love, and memorable moments.
               </p>
             </div>
@@ -142,10 +143,11 @@ export default function GalleryPage() {
                 <button
                   key={category.id}
                   onClick={() => setActiveCategory(category.id)}
-                  className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${activeCategory === category.id
-                    ? "bg-primary text-primary-foreground"
-                    : "bg-muted text-muted-foreground hover:bg-muted/80"
-                    }`}
+                  className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+                    activeCategory === category.id
+                      ? "bg-primary text-primary-foreground"
+                      : "bg-muted text-muted-foreground hover:bg-muted/80"
+                  }`}
                 >
                   {category.label}
                 </button>
@@ -159,8 +161,8 @@ export default function GalleryPage() {
           <div className="container mx-auto px-4 lg:px-8">
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {filteredItems.map((item) => (
-                <Card
-                  key={item.id}
+                <Card 
+                  key={item.id} 
                   className="group cursor-pointer overflow-hidden border-border/50 transition-all hover:shadow-lg"
                   onClick={() => setSelectedItem(item)}
                 >
@@ -192,11 +194,11 @@ export default function GalleryPage() {
 
         {/* Modal */}
         {selectedItem && (
-          <div
+          <div 
             className="fixed inset-0 z-50 flex items-center justify-center bg-foreground/80 p-4"
             onClick={() => setSelectedItem(null)}
           >
-            <div
+            <div 
               className="relative w-full max-w-2xl overflow-hidden rounded-2xl bg-card"
               onClick={(e) => e.stopPropagation()}
             >
@@ -236,7 +238,7 @@ export default function GalleryPage() {
               Want Your Event Featured Here?
             </h2>
             <p className="mx-auto mb-8 max-w-2xl text-muted-foreground">
-              Let us create a memorable event for you. Our team is ready to bring your vision to life
+              Let us create a memorable event for you. Our team is ready to bring your vision to life 
               and add another success story to our gallery.
             </p>
             <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
